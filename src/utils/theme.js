@@ -1,5 +1,5 @@
 import { color, spacing, fontSize } from './variables';
-import { mediaQuery } from 'utils/mixins';
+import { mediaQuery } from './mixins';
 
 export default {
   color,
