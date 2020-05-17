@@ -23,4 +23,4 @@ const ContactInfo = () => {
   );
 }
 
-export default ContactInfo;
+export default React.memo(ContactInfo);

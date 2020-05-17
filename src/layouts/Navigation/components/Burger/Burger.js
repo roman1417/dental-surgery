@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Box, Element } from './Burger.css';
 
@@ -6,10 +7,15 @@ const Burger = ({ isMobileMenuOpen, handleMobileMenuOpen }) => {
   return (
     <Container onClick={handleMobileMenuOpen}>
       <Box>
-        <Element />
+        <Element isMobileMenuOpen={isMobileMenuOpen} />
       </Box>
     </Container>
   );
 }
 
-export default Burger;
+Burger.propTypes = {
+  isMobileMenuOpen: PropTypes.bool.isRequired,
+  handleMobileMenuOpen: PropTypes.func.isRequired,
+}
+
+export default React.memo(Burger);
