@@ -2,7 +2,8 @@ import React, { useState, useCallback } from 'react';
 
 import { NavigationWrapper } from './Navigation.css';
 import { Logo, ContactInfo } from 'components';
-import Burger from './components/Burger'
+import Burger from './components/Burger';
+import MenuList from './components/MenuList';
 
 const Navigation = () => {
 
@@ -18,6 +19,10 @@ const Navigation = () => {
       <Logo />
       <ContactInfo />
       <Burger
+        isMobileMenuOpen={isMobileMenuOpen}
+        handleMobileMenuOpen={handleMobileMenuOpen}
+      />
+      <MenuList
         isMobileMenuOpen={isMobileMenuOpen}
         handleMobileMenuOpen={handleMobileMenuOpen}
       />
