@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 import { NavigationWrapper } from './Navigation.css';
 import { Logo, ContactInfo } from 'components';
@@ -10,13 +11,21 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileMenuOpen = useCallback(
-    () => setIsMobileMenuOpen(!isMobileMenuOpen),
+    (e) => {
+      if (e.target.tagName === 'IMG') {
+        setIsMobileMenuOpen(false);
+        return;
+      }
+      setIsMobileMenuOpen(!isMobileMenuOpen);
+    },
     [isMobileMenuOpen]
   );
 
   return (
     <NavigationWrapper>
-      <Logo />
+      <Link to='/' onClick={handleMobileMenuOpen}>
+        <Logo />
+      </Link>
       <ContactInfo />
       <Burger
         isMobileMenuOpen={isMobileMenuOpen}
