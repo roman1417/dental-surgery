@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const burgerLine = css`
   position: absolute;
@@ -54,3 +55,11 @@ export const Element = styled.span`
     `};
   }
 `;
+
+Container.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
+Element.propTypes = {
+  isMobileMenuOpen: PropTypes.bool.isRequired,
+};

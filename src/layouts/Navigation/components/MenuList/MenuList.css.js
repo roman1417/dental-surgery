@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { lighten } from 'polished';
+import PropTypes from 'prop-types';
 
 export const MenuContainer = styled.ul`
   position: absolute;
@@ -12,7 +13,7 @@ export const MenuContainer = styled.ul`
   box-shadow: 0 0 12px 1px rgba(0, 0, 0, .25);
   transform: ${({ isMobileMenuOpen }) => !isMobileMenuOpen &&
     'translateX(105%)'};
-  transition: .4s;
+  transition: .4s ease-in-out;
 `;
 
 export const MenuElemnet = styled.li`
@@ -30,3 +31,8 @@ export const MenuElemnet = styled.li`
     };
   }; 
 `;
+
+MenuContainer.propTypes = {
+  isMobileMenuOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
