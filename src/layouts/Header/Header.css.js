@@ -14,8 +14,14 @@ export const HeaderImage = styled.img`
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
-  min-height: 100%;
-  /* visibility: hidden;   */
+  min-height: 100%;  
+`;
+
+export const HeaderTitle = styled.h1`
+  position: absolute;
+  left: 5%;
+  top: 60%;
+  font-size: 2rem;  
 `;
 
 HeaderImage.propTypes = {
