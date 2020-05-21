@@ -15,5 +15,5 @@ export const ContactText = styled.p`
 `;
 
 export const ContactIcon = styled.span`
-padding-right: 10px;
+  padding-right: 10px;
 `;

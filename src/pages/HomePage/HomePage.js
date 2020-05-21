@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { Separator } from 'components'
+
 const HomePage = () => {
   return (
-    <div>Home</div>
+    <Separator />
   );
 }
 
