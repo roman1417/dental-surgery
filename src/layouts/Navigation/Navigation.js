@@ -26,7 +26,7 @@ const Navigation = () => {
       <Link to='/' onClick={handleMobileMenuOpen}>
         <Logo />
       </Link>
-      <ContactInfo />
+      <ContactInfo variant='navigation' />
       <Burger
         isMobileMenuOpen={isMobileMenuOpen}
         handleMobileMenuOpen={handleMobileMenuOpen}

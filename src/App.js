@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import GlobalStyles from './index.css';
 import theme from 'utils/theme';
 import { Wrapper } from './App.css';
-import { Navigation, Header, Main } from 'layouts';
+import { Navigation, Header, Main, Footer } from 'layouts';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Navigation />
           <Header />
           <Main />
+          <Footer />
         </Wrapper>
       </Router>
     </ThemeProvider>
