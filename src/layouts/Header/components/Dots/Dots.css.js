@@ -17,7 +17,8 @@ export const Dot = styled.span`
   border-radius: 50%;
   border: 3px solid white;
   cursor: pointer;
-  background-color: ${({ theme: { color }, number, activeSlide }) => number === activeSlide ? color.secondary : '#ccc'};  
+  background-color: ${({ theme: { color }, number, activeSlide }) =>
+    number === activeSlide ? color.secondary : '#ccc'};
 `;
 
 Dot.propTypes = {
