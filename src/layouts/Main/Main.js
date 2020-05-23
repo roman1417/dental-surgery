@@ -8,6 +8,7 @@ import {
   PriceListPage,
   GalleryPage,
   BlogPage,
+  ArticlePage,
   ContactPage,
   ErrorPage,
 } from 'pages'
@@ -21,6 +22,7 @@ const Main = () => {
         <Route path='/pricelist' component={PriceListPage} />
         <Route path='/gallery' component={GalleryPage} />
         <Route path='/blog' component={BlogPage} />
+        <Route path='/article/:id' component={ArticlePage} />
         <Route path='/contact' component={ContactPage} />
         <Route component={ErrorPage} />
       </Switch>
