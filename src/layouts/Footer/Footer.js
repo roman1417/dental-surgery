@@ -23,7 +23,7 @@ const Footer = () => {
         <FooterDescription>
           Dbamy o uśmiech naszyh pacjentów wykorzystując najnowsze technologie. Leczymy bezboleśnie i precyzyjnie.
         </FooterDescription>
-        <ContactInfo variant='header' />
+        <ContactInfo variant='footer' />
       </FooterAbout>
       <div>
         <FooterTitle>Godziny otwarcia</FooterTitle>

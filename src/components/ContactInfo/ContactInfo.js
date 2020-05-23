@@ -25,7 +25,7 @@ const ContactInfo = ({ variant }) => {
 }
 
 ContactInfo.propTypes = {
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(['navigation', 'footer']).isRequired,
 }
 
 export default React.memo(ContactInfo);

@@ -29,5 +29,5 @@ export const ContactIcon = styled.span`
 `;
 
 ContactInfoWrapper.propTypes = {
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(['navigation', 'footer']).isRequired,
 }
