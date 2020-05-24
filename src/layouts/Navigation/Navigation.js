@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import ScrollIntoView from 'react-scroll-into-view'
 
 import { NavigationWrapper } from './Navigation.css';
 import { Logo, ContactInfo } from 'components';
@@ -23,9 +24,11 @@ const Navigation = () => {
 
   return (
     <NavigationWrapper>
-      <Link to='/' onClick={handleMobileMenuOpen}>
-        <Logo />
-      </Link>
+      <ScrollIntoView selector='#header'>
+        <Link to='/' onClick={handleMobileMenuOpen}>
+          <Logo />
+        </Link>
+      </ScrollIntoView>
       <ContactInfo variant='navigation' />
       <Burger
         isMobileMenuOpen={isMobileMenuOpen}

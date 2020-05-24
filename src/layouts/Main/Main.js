@@ -14,8 +14,9 @@ import {
 } from 'pages'
 
 const Main = () => {
+
   return (
-    <MainWrapper>
+    <MainWrapper id='main'>
       <Switch>
         <Route path='/' exact component={HomePage} />
         <Route path='/crew' component={CrewPage} />

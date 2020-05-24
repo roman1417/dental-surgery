@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import ScrollIntoView from 'react-scroll-into-view'
 
 import articles from 'utils/articles';
 import { Separator, Button } from 'components';
@@ -18,9 +19,11 @@ const BlogPage = () => {
         <ArticleTitle>{article.title}</ArticleTitle>
         <ArticleInitialText>{article.initialText}</ArticleInitialText>
         <ArtticleButtonWrapper>
-          <Button variant='article' to={`/article/${article.id}`}>
-            Czytaj więcej
+          <ScrollIntoView selector='#main'>
+            <Button variant='article' to={`/article/${article.id}`}>
+              Czytaj więcej
           </Button>
+          </ScrollIntoView>
         </ArtticleButtonWrapper>
       </Article>
     ))

@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollIntoView from 'react-scroll-into-view'
 
 import { StyledLink } from './ArticlePage.css';
 import { Article } from 'components';
@@ -8,7 +9,9 @@ const ArticlePage = ({ match }) => {
   return (
     <>
       <Article articleId={articleId} />
-      <StyledLink to='/blog'>Powrót do listy artykułów</StyledLink>
+      <ScrollIntoView selector='#main'>
+        <StyledLink to='/blog'>Powrót do listy artykułów</StyledLink>
+      </ScrollIntoView>
     </>
   );
 }

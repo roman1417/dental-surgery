@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import gsap from 'gsap';
+import ScrollIntoView from 'react-scroll-into-view';
 
 import { HeaderWrapper, HeaderImage, HeaderTitle } from './Header.css';
 import Dots from './components/Dots';
@@ -53,7 +54,7 @@ const Header = () => {
   }, [activeSlide, changeSlide]);
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper id='header'>
       <HeaderImage
         ref={imageRef}
         srcSet={slides[activeSlide].srcSet}
@@ -68,13 +69,15 @@ const Header = () => {
       <HeaderTitle ref={titleRef}>
         {slides[activeSlide].text}
       </HeaderTitle>
-      <Button
-        ref={buttonRef}
-        variant='header'
-        to={`/article/${activeSlide + 1}`}
-      >
-        Zobacz więcej
+      <ScrollIntoView selector='#main'>
+        <Button
+          ref={buttonRef}
+          variant='header'
+          to={`/article/${activeSlide + 1}`}
+        >
+          Zobacz więcej
         </Button>
+      </ScrollIntoView>
     </HeaderWrapper>
   );
 }
