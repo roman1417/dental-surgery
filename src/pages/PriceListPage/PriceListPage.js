@@ -18,10 +18,10 @@ const PriceListPage = () => {
       <PriceListGroup key={item.title}>
         <GroupTitle>{item.title}</GroupTitle>
         <Separator />
-        {item.services.map(item => (
-          <Service key={item.id}>
-            <ServiceName>{item.name}</ServiceName>
-            <ServicePrice>{`${item.value} zł`}</ServicePrice>
+        {item.services.map(({ id, name, value }) => (
+          <Service key={id}>
+            <ServiceName>{name}</ServiceName>
+            <ServicePrice>{`${value} zł`}</ServicePrice>
           </Service>
         ))}
       </PriceListGroup>

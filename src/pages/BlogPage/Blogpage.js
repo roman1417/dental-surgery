@@ -13,14 +13,14 @@ import {
 const BlogPage = () => {
 
   const articleList = useMemo(() => (
-    articles.map(article => (
-      <Article key={article.id}>
+    articles.map(({ id, title, initialText }) => (
+      <Article key={id}>
         <Separator />
-        <ArticleTitle>{article.title}</ArticleTitle>
-        <ArticleInitialText>{article.initialText}</ArticleInitialText>
+        <ArticleTitle>{title}</ArticleTitle>
+        <ArticleInitialText>{initialText}</ArticleInitialText>
         <ArtticleButtonWrapper>
           <ScrollIntoView selector='#main'>
-            <Button variant='article' to={`/article/${article.id}`}>
+            <Button variant='article' to={`/article/${id}`}>
               Czytaj więcej
           </Button>
           </ScrollIntoView>

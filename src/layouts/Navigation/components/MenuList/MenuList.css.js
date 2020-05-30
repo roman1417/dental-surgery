@@ -27,7 +27,7 @@ export const MenuElemnet = styled.li`
     text-decoration: none;
     &.active, &:hover {
       background-color: ${({ theme: { color: { primary } } }) =>
-    lighten(0.25, primary)};
+    lighten(.25, primary)};
     };
   }; 
 `;
