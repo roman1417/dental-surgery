@@ -8,7 +8,7 @@ import {
   HoursText,
 } from './Footer.css';
 import { ContactInfo } from 'components';
-import hours from 'utils/openingHours';
+import hours from 'assets/openingHours';
 
 const Footer = () => {
 

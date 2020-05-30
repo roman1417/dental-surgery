@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Tween, Reveal } from 'react-gsap';
 
-import crew from 'utils/crew';
+import crew from 'assets/crew';
 import { Separator } from 'components'
 import {
   CrewPageWrapper,
@@ -30,7 +30,7 @@ const CrewPage = () => {
           </Tween>
         </Reveal>
         <CardDescription>
-          <Reveal trigger={<CardDescription />} threshold={.85}>
+          <Reveal trigger={<CardDescription />} threshold={.75}>
             <Tween from={{ x: '10vw' }} duration={2} ease='power4.out'>
               <h3>{name}</h3>
             </Tween>

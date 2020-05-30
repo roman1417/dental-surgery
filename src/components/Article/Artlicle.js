@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import articles from 'utils/articles';
+import articles from 'assets/articles';
 import {
   ArticleWrapper,
   ArticleTitle,

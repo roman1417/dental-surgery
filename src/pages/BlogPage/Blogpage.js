@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import ScrollIntoView from 'react-scroll-into-view'
 
-import articles from 'utils/articles';
+import articles from 'assets/articles';
 import { Separator, Button } from 'components';
 import {
   Article,

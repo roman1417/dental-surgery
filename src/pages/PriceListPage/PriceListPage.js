@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import prices from 'utils/priceList';
+import prices from 'assets/priceList';
 import { Separator } from 'components';
 import {
   PriceListPageWrapper,

@@ -1,8 +1,13 @@
 import React from 'react';
 
+import { ErrorText } from './ErrorPage.css';
+import { Emoji } from 'components';
+
 const ErrorPage = () => {
   return (
-    <div>Nie ma takiej strony</div>
+    <ErrorText>
+      Nie ma takiej strony&nbsp;<Emoji label="astonished face" symbol="😲" />
+    </ErrorText>
   );
 }
 

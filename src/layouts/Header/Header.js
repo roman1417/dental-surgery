@@ -5,7 +5,7 @@ import ScrollIntoView from 'react-scroll-into-view';
 import { HeaderWrapper, HeaderImage, HeaderTitle } from './Header.css';
 import Dots from './components/Dots';
 import { Button } from 'components';
-import slides from 'utils/slides';
+import slides from 'assets/slides';
 
 const Header = () => {
 
