@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { HeaderButton, ArticleButton, FormButton } from './Button.css';
 
-const Button = forwardRef(({ variant, children, to }, buttonRef) => {
+const Button = forwardRef(({ variant, children, ...props }, buttonRef) => {
+
+  const { to, disabled } = props
 
   const Component = useMemo(() => {
     switch (variant) {
@@ -20,15 +22,21 @@ const Button = forwardRef(({ variant, children, to }, buttonRef) => {
   }, [variant]);
 
   return (
-    <Link to={to}>
-      <Component ref={buttonRef}>{children}</Component>
-    </Link>
+    to ?
+      <Link to={to}>
+        <Component ref={buttonRef}>{children}</Component>
+      </Link>
+      :
+      <Component disabled={disabled}>{children}</Component>
   );
 })
 
+
+
 Button.propTypes = {
   variant: PropTypes.oneOf(['header', 'article', 'form']).isRequired,
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string,
+  disabled: PropTypes.bool,
   children: PropTypes.string.isRequired,
 }
 

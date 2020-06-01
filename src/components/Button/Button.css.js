@@ -26,5 +26,9 @@ export const FormButton = styled(RootButton)`
   display: block;
   margin: ${({ theme: { spacing: { main } } }) => `
   ${main / 4}px 10% ${main / 2}px auto
-  `}  
+  `};
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
 `;
