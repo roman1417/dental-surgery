@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { media } from 'utils/mixins';
+
 const margin = css`
 margin-bottom: ${({ theme: { spacing } }) => spacing.main / 2}px;
 `;
@@ -22,7 +24,16 @@ export const HomeDescription = styled.p`
 
 export const HomeImageWrapper = styled.div`
   width: 100%;
-  margin: ${({ theme: { spacing } }) => `${spacing.main}px 0`};
+  margin: ${({ theme: { spacing } }) => `${spacing.main * 2}px auto`};
+  ${media.smLandscape`
+  width: 80%;
+  `};
+  ${media.sm`
+  width: 70%;
+  `};
+  ${media.lg`
+  width: 60%;
+  `};
 `;
 
 export const HomeImage = styled.img`

@@ -1,8 +1,14 @@
 import { css } from 'styled-components';
 
-import { breakpoints } from './variables';
+const breakpoints = {
+  smLandscape: '0px) and (orientation: landscape',
+  sm: '768px',
+  mdLandscape: '768px) and (orientation: landscape',
+  md: '1024px',
+  lg: '1200px',
+};
 
-export const mediaQuery = Object.keys(breakpoints)
+export const media = Object.keys(breakpoints)
   .reduce((acc, breakpoint) => {
     acc[breakpoint] = (...args) => css`
 		@media (min-width: ${breakpoints[breakpoint]}) {

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { media } from 'utils/mixins';
+
 export const ContactInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,6 +20,10 @@ export const ContactInfoWrapper = styled.div`
   justify-content: center;  
   padding: ${({ variant }) => variant === 'navigation' && `0 10px`}; 
   font-size: ${({ variant }) => variant === 'navigation' && .85}rem;
+  ${media.md`
+    flex-grow: 0;
+    margin-right: ${({ variant, theme: { spacing } }) => variant === 'navigation' && spacing.main * 2}px;
+  `};
 `;
 
 export const ContactText = styled.p`

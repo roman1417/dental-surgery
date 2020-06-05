@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 
 import {
   FooterWrapper,
+  FooterContainer,
   FooterAbout,
   FooterTitle,
   FooterDescription,
@@ -18,17 +19,19 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      <FooterAbout>
-        <FooterTitle>O naszej klinice</FooterTitle>
-        <FooterDescription>
-          Dbamy o uśmiech naszyh pacjentów wykorzystując najnowsze technologie. Leczymy bezboleśnie i precyzyjnie.
+      <FooterContainer>
+        <FooterAbout>
+          <FooterTitle>O naszej klinice</FooterTitle>
+          <FooterDescription>
+            Dbamy o uśmiech naszyh pacjentów wykorzystując najnowsze technologie. Leczymy bezboleśnie i precyzyjnie.
         </FooterDescription>
-        <ContactInfo variant='footer' />
-      </FooterAbout>
-      <div>
-        <FooterTitle>Godziny otwarcia</FooterTitle>
-        {openingHours}
-      </div>
+          <ContactInfo variant='footer' />
+        </FooterAbout>
+        <div>
+          <FooterTitle>Godziny otwarcia</FooterTitle>
+          {openingHours}
+        </div>
+      </FooterContainer>
     </FooterWrapper>
   );
 }

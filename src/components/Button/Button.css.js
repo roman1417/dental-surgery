@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
+
+import { media } from 'utils/mixins';
 
 const RootButton = styled.button`
   padding: ${({ theme: { spacing: { main } } }) => `${main / 4}px ${main / 2}px`};  
@@ -7,7 +10,12 @@ const RootButton = styled.button`
   font-size: .9rem;
   background-color: ${({ theme: { color } }) => color.primary};
   color: white;
-  cursor: pointer;  
+  cursor: pointer;
+  border-radius: 6px;
+  transition: .3;
+  &:hover {
+    background-color: ${({ theme: { color } }) => darken(.1, color.primary)};
+  }
 `;
 
 export const HeaderButton = styled(RootButton)`
@@ -16,6 +24,12 @@ export const HeaderButton = styled(RootButton)`
   top: 75%;
   border: none;  
   font-size: 1.4rem;
+  ${({ theme: { spacing } }) => media.smLandscape`
+  left: ${spacing.main * 2}px;
+  `};
+  ${({ theme: { spacing } }) => media.sm`
+  left: ${spacing.main * 2}px;
+  `};
 `;
 
 export const ArticleButton = styled(RootButton)`
@@ -25,7 +39,7 @@ export const ArticleButton = styled(RootButton)`
 export const FormButton = styled(RootButton)`
   display: block;
   margin: ${({ theme: { spacing: { main } } }) => `
-  ${main / 4}px 10% ${main / 2}px auto
+  ${main * 2}px 0 ${main / 2}px auto
   `};
   &[disabled] {
     cursor: not-allowed;

@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { normalizePhone } from 'utils';
 import {
+  FormWrapper,
   FormTitle,
   FieldWrapper,
 } from './ContactPage.css';
@@ -30,7 +31,7 @@ const composeValidators = (...validators) => value =>
 
 const ContactPage = () => {
   return (
-    <>
+    <FormWrapper>
       <FormTitle>Napisz do nas</FormTitle>
       <Form
         onSubmit={onSubmit}
@@ -96,7 +97,7 @@ const ContactPage = () => {
           </form>
         )}
       />
-    </>
+    </FormWrapper>
   );
 }
 

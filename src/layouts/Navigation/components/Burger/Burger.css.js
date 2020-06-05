@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
+import { media } from 'utils/mixins';
+
 const burgerLine = css`
   position: absolute;
   left: 0;
@@ -16,7 +18,10 @@ export const Container = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
-  outline: none;  
+  outline: none;
+  ${media.md`
+  display: none;
+  `}
 `;
 
 export const Box = styled.span`

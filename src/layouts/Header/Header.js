@@ -2,7 +2,12 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollIntoView from 'react-scroll-into-view';
 
-import { HeaderWrapper, HeaderImage, HeaderTitle } from './Header.css';
+import {
+  HeaderWrapper,
+  HeaderContainer,
+  HeaderImage,
+  HeaderTitle
+} from './Header.css';
 import Dots from './components/Dots';
 import { Button } from 'components';
 import slides from 'assets/slides';
@@ -33,7 +38,7 @@ const Header = () => {
       .to(image, { duration: .03 * time, opacity: 1, autoAlpha: 1 })
       .to(image, { duration: .94 * time, opacity: 1 })
       .to(image, { duration: .03 * time, opacity: 0 })
-      .to(title, { duration: .05 * time, opacity: 1, y: '-140%', autoAlpha: 1 }, 'start')
+      .to(title, { duration: .05 * time, opacity: 1, y: '-180%', autoAlpha: 1 }, 'start')
       .to(title, { duration: .92 * time, opacity: 1 }, '>')
       .to(title, { duration: .03 * time, opacity: 0 }, '>')
       .to(button, { duration: .03 * time, opacity: 0, autoAlpha: 1 }, 'start')
@@ -61,23 +66,25 @@ const Header = () => {
         sizes='(max-width: 640px) 600px, (max-width: 1280px) 1200px, 1800px '
         src={slides[activeSlide].src}
       />
-      <Dots
-        slides={slides}
-        activeSlide={activeSlide}
-        changeDot={changeDot}
-      />
-      <HeaderTitle ref={titleRef}>
-        {slides[activeSlide].text}
-      </HeaderTitle>
-      <ScrollIntoView selector='#main'>
-        <Button
-          ref={buttonRef}
-          variant='header'
-          to={`/article/${activeSlide + 1}`}
-        >
-          Zobacz więcej
+      <HeaderContainer>
+        <Dots
+          slides={slides}
+          activeSlide={activeSlide}
+          changeDot={changeDot}
+        />
+        <HeaderTitle ref={titleRef}>
+          {slides[activeSlide].text}
+        </HeaderTitle>
+        <ScrollIntoView selector='#main'>
+          <Button
+            ref={buttonRef}
+            variant='header'
+            to={`/article/${activeSlide + 1}`}
+          >
+            Zobacz więcej
         </Button>
-      </ScrollIntoView>
+        </ScrollIntoView>
+      </HeaderContainer>
     </HeaderWrapper>
   );
 }
